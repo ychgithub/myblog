@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#-)u8ft!^m1oe@26$@ioot%0z%1rvl0@+f1le##_oqp!#5lox-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = false
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '182.254.137.249']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '113.209.11.31']
 
 
 # Application definition
@@ -123,13 +123,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+# )
 # 上面这个,在服务器中,需要注释掉.
 
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # 上面这个,在本地,需要注释掉.
 
 

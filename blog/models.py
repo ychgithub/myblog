@@ -31,12 +31,13 @@ class Post(models.Model):
     title = models.CharField(max_length=70, verbose_name='标题')
     markdown_or_not = models.CharField(max_length=6, choices=(
         ('m', 'markdown'), ('c', 'ckeditor')), default='c', verbose_name='编辑器选择')
+    excerpt = models.TextField(verbose_name='摘要', max_length=200, blank=True)
     body = models.TextField('文章-Markdown', blank=True)
     body_ckeditor = RichTextField('文章-ckeditor', blank=True)
     created_time = models.DateTimeField('添加时间', default=datetime.now)
     modified_time = models.DateTimeField(
         default=datetime.now, verbose_name='最后修改时间')
-    excerpt = models.TextField(verbose_name='摘要', max_length=200, blank=True)
+    
     category = models.ForeignKey(Category, verbose_name='分类')
     tags = models.ManyToManyField(Tag, blank=True, verbose_name='标签')
     author = models.ForeignKey(User, verbose_name='作者')
